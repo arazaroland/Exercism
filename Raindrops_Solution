@@ -1,0 +1,32 @@
+raindrops <- function(x) {
+  data.storage <- 1
+  text.holder <- "DELETE"
+  i <- 0
+  if (x%%3 == 0) {
+    text.holder <- c(text.holder, "Pling")
+    i <- i + 1
+  }
+  if (x%%5 == 0) {
+    text.holder <- c(text.holder, "Plang")
+    i <- i + 1
+  }
+  if (x%%7 == 0) {
+      text.holder <- c(text.holder, "Plong")
+      i <- i + 1
+  } 
+  text.holder <- text.holder[-1]
+  if (i == 0) {
+    return(x)
+  } else if (i == 1) {
+    return(paste(text.holder[1], sep = ""))
+  } else if (i == 2) {
+    return(paste(text.holder[1], text.holder[2], sep = ""))
+  } else if (i == 3) {
+    return(paste(text.holder[1], text.holder[2], text.holder[3], sep = ""))
+  }
+}
+
+
+
+
+
