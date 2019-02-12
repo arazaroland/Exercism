@@ -1,0 +1,13 @@
+sum_of_multiples <- function(factors, limit) {
+  library(dplyr)
+  holder <- c()
+  for (i in factors) {
+    for (j in 1:(limit-1)) {
+      if (j%%i == 0) {
+        holder <- c(holder,j)
+      }
+    }
+  }
+ holder <-  holder[!duplicated(holder)]
+ sum(holder)
+}
