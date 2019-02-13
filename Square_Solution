@@ -1,0 +1,17 @@
+square <- function(x){
+  if (x >= 1 & x <= 64) {
+    for (i in 0:(x-1)) {
+      grain_num <- 2^i
+    }
+    return(grain_num)
+  }else{
+    stop("Error")
+  }
+}
+total <- function(){
+  total <- 0
+  for (i in 1:64) {
+    total <- square(i) + total
+  }
+  return(total)
+}
