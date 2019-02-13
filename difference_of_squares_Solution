@@ -1,0 +1,11 @@
+difference_of_squares <- function(x) {
+  holder1 <- 0
+  holder2 <- 0
+  for (i in 1:x) {
+    sum_square <- i + holder1
+    square_sum <- (i^2) + holder2 
+    holder1 <- sum_square
+    holder2 <- square_sum
+  }
+  return((sum_square)^2 - square_sum)
+}
