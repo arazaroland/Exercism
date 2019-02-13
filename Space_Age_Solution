@@ -1,0 +1,9 @@
+space_age <- function(seconds,planet){
+  names <- c("earth", "mercury", "venus", "mars", "jupiter", "saturn", "uranus", "neptune")
+  years <- c(1, 0.2408467, 0.61519726, 1.8808158, 11.862615, 29.447498, 84.016846, 164.79132)
+  data.holder <- data.frame(t(years))
+  colnames(data.holder) <- names
+  colnum <- which(colnames(data.holder) == planet)
+  age <- (seconds/31557600)/data.holder[colnum]
+  return(as.numeric(round(age,2)))
+}  
