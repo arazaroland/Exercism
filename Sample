@@ -1,0 +1,23 @@
+sample <- function(subject, candidates) {
+  storage_answer <- c()
+  for (candidate in candidates) {
+    num_subject <- nchar(subject)
+    storage_subject <- c()
+    num_candidate <- nchar(candidate)
+    storage_candidate <- c()
+    if (subject != candidate) {
+      if (num_subject == num_candidate) {
+        for (i in 1:num_subject) {
+          storage_subject <- c(storage_subject, substring(subject, i, i))
+        }  
+        for (i in 1:num_subject) {
+          storage_candidate <- c(storage_candidate, substring(candidate, i, i))
+        }
+        if (sum(storage_subject %in% storage_candidate) == num_candidate) {
+          storage_answer <- c(storage_answer, candidate)
+        }
+      }
+    } 
+  }
+  print(storage_answer)
+}
